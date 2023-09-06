@@ -26,6 +26,7 @@
         </div>
     </header>
 </div>
+            
     </x-slot>
     @if(session()->has('info'))
         <div class="alert alert-success" role="alert">
@@ -40,7 +41,7 @@
                             <th>Libelle</th>
                             <th>Mot-Clés</th>
                             <th>Provenance</th>
-                            <!-- <th>Professeur</th> -->
+                            <th>Professeur</th>
                             <th>Statut</th>
                             <th>Actions</th>
                             @if(auth()->user()->role === 'etudiant')
@@ -55,10 +56,10 @@
                                 <td>{{ $sujet->id }}</td>
                                 <td><strong>{{ $sujet->libelle }}</strong></td>
                                 <td><strong>{{ $sujet->motCle }}</strong></td>
-                                <!-- <td><strong>{{ $sujet->user_id }}</strong></td> -->
                                 <td><strong>{{ $sujet->user->name }}</strong></td>
+                                <td><strong>{{ $sujet->professeur->user->name }}</strong></td>
                                
-                                @if ($sujet->estValide())
+                                @if ($sujet->is_valide === 1)
                                 <td><strong>{{ 'Validé' }}</strong></td>
                                 @else
                                 <td><strong>{{ 'Non validé' }}</strong></td>

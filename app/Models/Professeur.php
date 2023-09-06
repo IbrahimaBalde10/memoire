@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Model\PropositionSujet;
 use App\Models\Sujet;
 use App\Models\User;
+use App\Models\FicheSuivie;
 
 class Professeur extends Model
 {
@@ -32,4 +33,9 @@ class Professeur extends Model
 {
     return $this->hasMany('App\Models\PropositionSujet', 'professeur_id');
 }
+
+  public function fichesSuivis()
+    {
+        return $this->hasMany(FicheSuivi::class);
+    }
 }

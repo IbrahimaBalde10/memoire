@@ -14,7 +14,7 @@
             <p>@lang('Provenance'): {{ $sujet->user->name }}</p>
              
             <p class="font-semibold text-xl text-gray-800 pt-2">@lang('Professeur')
-    : {{ $sujet->user->name }}</p>
+    : {{ $sujet->professeur->user->name}}</p>
     </div>
     </div>
     

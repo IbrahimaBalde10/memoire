@@ -34,7 +34,7 @@
                                 <td><strong>{{ $sujet->motCle }}</strong></td>
                                  <td><strong>{{ $sujet->user->name }}</strong></td>
                                  <!-- <td><strong>{{ $sujet->professeur_id }}</strong></td> -->
-                                @if ($sujet->estValide())
+                                @if ($sujet->is_valide === 1)
                                 <td><strong>{{ 'Validé' }}</strong></td>
                                 @else
                                 <td><strong>{{ 'Non validé' }}</strong></td>

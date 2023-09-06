@@ -17,6 +17,7 @@
                             <th>Id</th>
                             <th>Etudiant</th>
                             <th>Professeur</th>
+                            <th>Sujet</th>
                             <th>Statut</th>
                        
 
@@ -26,9 +27,10 @@
                         @foreach($choixs as $choix)
                             <tr>
                                 <td>{{ $choix->id }}</td>
-                                <td><strong>{{ $choix->etudiant_id }}</strong></td>
-                                <td><strong>{{ $choix->professeur_id }}</strong></td>
-                                <!-- <td><strong>{{ $choix->statut }}</strong></td> -->
+                                <td><strong>{{ $choix->etudiant->user->name}}</strong></td>
+                                <td><strong>{{ $choix->professeur->user->name }}</strong></td>
+                                <td><strong>{{ $choix->sujet_id }}</strong></td>
+
                                 @if ($choix->statut === 1)
                                 <td><strong>{{ 'Validé' }}</strong></td>
                                 @else

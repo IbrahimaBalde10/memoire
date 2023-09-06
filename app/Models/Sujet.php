@@ -8,6 +8,7 @@ use App\Models\Filiere;
 use App\Models\ZchoisirSujet;
 use App\Models\User;
 use App\Models\Professeur;
+use App\Models\FicheSuivie;
 
 
 class Sujet extends Model
@@ -58,5 +59,10 @@ public function choix()
  public function user()
     {
         return $this->belongsTo(User::class);
+    }
+      
+    public function fichesSuivis()
+    {
+        return $this->hasMany(FicheSuivi::class);
     }
 }

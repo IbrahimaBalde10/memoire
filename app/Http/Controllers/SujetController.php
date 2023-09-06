@@ -34,8 +34,6 @@ class SujetController extends Controller
          $filieres = Filiere::all();
         
          $professeurs = Professeur::all();
-        // $professeurs = User::all();
-        //  $professeurs = User::where('role', 'professeur')->get();
          return view('sujets.create', compact('filieres','professeurs'));
     }
 
@@ -44,15 +42,15 @@ class SujetController extends Controller
      */
     public function store(Request $request)
     {
-        // $this->validate($request, [
-        //     'libelle' =>'required',
-        //     'resume' =>'required',
-        //     'motCle' =>'required',
-        //     'user_id' =>'required',
-        //     'professeur_id' =>'required',
-        //     'is_valide' =>'required',
+        $this->validate($request, [
+            'libelle' =>'required',
+            'resume' =>'required',
+            'motCle' =>'required',
+            'user_id' =>'required',
+            'professeur_id' =>'required',
+            'is_valide' =>'required',
             
-        // ]);
+        ]);
      $sujet = Sujet::create($request->all());
           // Si l'utilisateur est un professeur, alors le sujet est validé (is_valide = true)
     if (auth()->user()->role === 'professeur') {

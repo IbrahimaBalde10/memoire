@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Model\PropositionSujet;
 use App\Models\User;
+use App\Models\FicheSuivie;
 
 class Etudiant extends Model
 {
@@ -25,4 +26,9 @@ class Etudiant extends Model
 {
     return $this->hasMany('App\Models\PropositionSujet');
 }
+
+  public function fichesSuivis()
+    {
+        return $this->hasMany(FicheSuivi::class);
+    }
 }

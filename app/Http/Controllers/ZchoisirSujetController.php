@@ -85,4 +85,10 @@ class ZchoisirSujetController extends Controller
         return redirect()->route('choix.mesChoix')->with('info', 'Le choix a été validé avec succès !');
     }
 
+    // afficher les infos d'un choix
+       public function show(ZchoisirSujet $choix)
+    {
+        return view('choix.show', compact('choix'));
+    }
+
 }

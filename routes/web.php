@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SujetController;
 use App\Http\Controllers\ZchoisirSujetController;
+use App\Http\Controllers\FicheSuivieController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,12 +33,19 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
- Route::resource('sujets',SujetController::class)->middleware(['auth', 'verified']);
+Route::resource('sujets',SujetController::class)->middleware(['auth', 'verified']);
 
 // effectuer choix sujet
 Route::get('/choix', [ZchoisirSujetController::class, 'index'])->name('choix.index')->middleware(['auth', 'verified']);
-Route::post('/choix', [ZchoisirSujetController::class, 'store'])->name('choix.store')->middleware(['auth', 'verified']);;
-Route::get('/choix/{sujet}/create', [ZchoisirSujetController::class, 'create'])->name('choix.create');
+Route::post('/choix', [ZchoisirSujetController::class, 'store'])->name('choix.store')->middleware(['auth', 'verified']);
+Route::get('/choix{sujet}/create', [ZchoisirSujetController::class, 'create'])->name('choix.create');
+Route::get('/choix{choix}/show', [ZchoisirSujetController::class, 'show'])->name('choix.show');
+
+// fiches de suivis
+Route::get('/ficheSuivie', [FicheSuivieController::class, 'index'])->name('ficheSuivie.index')->middleware(['auth', 'verified']);
+
+Route::get('/ficheSuivie{choix}/create', [FicheSuivieController::class, 'create'])->name('ficheSuivie.create')->middleware(['auth', 'verified']);
+Route::post('/ficheSuivie', [FicheSuivieController::class, 'store'])->name('ficheSuivie.store')->middleware(['auth', 'verified']);
 
 // afficher tous les choix
 //  Route::get('Choix', [ZchoisirSujetController::class, 'indexMesChoix'])->name('choix.mesChoix')->middleware(['auth', 'verified']);;
