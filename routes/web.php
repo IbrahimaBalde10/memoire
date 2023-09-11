@@ -61,6 +61,16 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('sujetsP', [SujetController::class, 'indexPrSujet'])->name('choix.sujetsP');
 });
 
+// afficher mes etudiants ficheSuivie.mesEtudiants
+Route::group(['middleware' => ['auth', 'verified']], function () {
+    Route::get('mesEtudiants', [ZchoisirSujetController::class, 'mesEtudiants'])->name('choix.mesEtudiants');
+});
+
+// affocher les fiches de suivies d'un étudiant
+Route::group(['middleware' => ['auth', 'verified']], function () {
+    Route::get('/ficheSuivie{etudiant}/', [FicheSuivieController::class, 'show1'])->name('ficheSuivie.show1');
+});
+
 
 //  chercher les sujets par filiere
  Route::controller(SujetController::class)->group(function () {

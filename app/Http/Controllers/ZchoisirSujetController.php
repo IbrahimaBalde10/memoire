@@ -91,4 +91,20 @@ class ZchoisirSujetController extends Controller
         return view('choix.show', compact('choix'));
     }
 
+     // afficher mes etudiants mesEtudiants
+      public function mesEtudiants()
+    {
+        //  $choixs = ZchoisirSujet::where('statut', true)->oldest('id')->paginate(5);
+
+        $idProf= auth()->user()->professeur->id;
+        $choixs = ZchoisirSujet::where('professeur_id', $idProf )->get();
+        return view('choix.mesEtudiants', compact('choixs'));
+        
+
+
+
+        // return view('ficheSuivie.mesEtudiants1', compact('idProf'));
+
+    }
+
 }

@@ -52,7 +52,20 @@
                         {{ __('Sujets à valider') }}
                     </x-nav-link>
                 </div>
+                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('choix.mesEtudiants')" :active="request()->routeIs('choix.mesEtudiants')">
+                        {{ __('Mes étudiants') }}
+                    </x-nav-link>
+                </div>
                 @endif
+                 @if(auth()->user()->role === 'etudiant')
+                   <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <?php $idEtudiant = auth()->user()->etudiant->id; ?>
+                    <x-nav-link :href="route('ficheSuivie.show1', $idEtudiant)" :active="request()->routeIs('ficheSuivie.show1', $idEtudiant)">
+                        {{ __('Mes fiches') }}
+                    </x-nav-link>
+                </div>
+                 @endif
             </div>
 
             <!-- Settings Dropdown -->

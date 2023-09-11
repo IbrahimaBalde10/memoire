@@ -11,14 +11,14 @@ use App\Models\FicheSuivie;
 
 class FicheSuivieController extends Controller
 {
-        public function index($name = null)
-{
-  
-    $ficheSuivies = FicheSuivie::all();
+    public function index()
+    {
     
-    return view('ficheSuivie.index', compact('ficheSuivies'));
+        $ficheSuivies = FicheSuivie::all();
+        
+        return view('ficheSuivie.index', compact('ficheSuivies'));
 
-}
+    }
     // afficher le formulaire
     public function create(ZchoisirSujet $choix)
     {
@@ -45,5 +45,17 @@ class FicheSuivieController extends Controller
         return redirect()->route('choix.mesChoix')->with('info', 'La fiche est créé avec succès');
 
     }
+
+    // // afficher les fiches de suivies d'un etudiant
+      public function show1(Etudiant $etudiant)
+    {
+
+        $idEtudiant= $etudiant->id;
+        $ficheSuivies = FicheSuivie::where('etudiant_id', $idEtudiant )->get();
+        return view('ficheSuivie.mesfiches', compact('ficheSuivies'));
+
+
+    }
+    
 
 }
