@@ -4,30 +4,16 @@
             {{session('info')}}
         </div>
     @endif
-    <br><br><br><br>
-        <div class="flex flex-col sm:justify-center items-center ">
-                <table class="table table-hover">
-                    <thead>
-                        <tr class="fw-bold">
-                            <th>Id</th>
-                            <th>Etudiant</th>
-                            <th>Professeur</th>
-                            <th>Sujet</th>                            
-                        </tr>
-                    </thead>
-                    <tbody class="fw-lighter">
-                        @foreach($ficheSuivies as $ficheSuivie)
-                            <tr>
-                                <td>{{ $ficheSuivie->id }}</td>
-                                <td><strong>{{ $ficheSuivie->etudiant->user->name }}</strong></td>
-                                <td><strong>{{ $ficheSuivie->professeur->user->name}}</strong></td>
-                                <td><strong>{{ $ficheSuivie->sujet_id}}</strong></td>
-                               
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
-             
-
+    <br><br><br><br> 
+    @foreach($ficheSuivies as $ficheSuivie)
+    <div class="card">
+        <div class="card-header">
+             <h1 class="card-title">  {{ $ficheSuivie->titre }}t</h1>
+        </div>
+        <div class="card-body">
+            <p class="card-text">{{ $ficheSuivie->description }}.</p>
+            <a href="{{ route('commentaires.create',['ficheSuivie' => $ficheSuivie->id] ) }}"class="btn btn-primary">Aficher</a>
+        </div>
+     </div><br>
+     @endforeach
 </x-app-layout>

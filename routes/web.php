@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SujetController;
 use App\Http\Controllers\ZchoisirSujetController;
 use App\Http\Controllers\FicheSuivieController;
+use App\Http\Controllers\CommentaireController;
+use App\Http\Controllers\MemoireController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,9 +45,19 @@ Route::get('/choix{choix}/show', [ZchoisirSujetController::class, 'show'])->name
 
 // fiches de suivis
 Route::get('/ficheSuivie', [FicheSuivieController::class, 'index'])->name('ficheSuivie.index')->middleware(['auth', 'verified']);
-
 Route::get('/ficheSuivie{choix}/create', [FicheSuivieController::class, 'create'])->name('ficheSuivie.create')->middleware(['auth', 'verified']);
 Route::post('/ficheSuivie', [FicheSuivieController::class, 'store'])->name('ficheSuivie.store')->middleware(['auth', 'verified']);
+
+// commentaires
+Route::get('/commentaires{ficheSuivie}/create', [CommentaireController::class, 'create'])->name('commentaires.create')->middleware(['auth', 'verified']);
+Route::post('/commentaires', [CommentaireController::class, 'store'])->name('commentaires.store')->middleware(['auth', 'verified']);
+Route::get('/commentaires', [CommentaireController::class, 'index'])->name('commentaires.index')->middleware(['auth', 'verified']);;
+
+// memoires
+Route::get('/memoires', [MemoireController::class, 'index'])->name('memoires.index')->middleware(['auth', 'verified']);
+Route::get('/memoires{choix}/create', [MemoireController::class, 'create'])->name('memoires.create')->middleware(['auth', 'verified']);
+Route::post('/memoires', [MemoireController::class, 'store'])->name('memoires.store')->middleware(['auth', 'verified']);
+
 
 // afficher tous les choix
 //  Route::get('Choix', [ZchoisirSujetController::class, 'indexMesChoix'])->name('choix.mesChoix')->middleware(['auth', 'verified']);;

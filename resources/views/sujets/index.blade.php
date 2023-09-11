@@ -57,7 +57,7 @@
                                 <td><strong>{{ $sujet->libelle }}</strong></td>
                                 <td><strong>{{ $sujet->motCle }}</strong></td>
                                 <td><strong>{{ $sujet->user->name }}</strong></td>
-                                <td><strong>{{ $sujet->professeur->user->name }}</strong></td>
+                                <td><strong>Mr {{ $sujet->professeur->user->name }}</strong></td>
                                
                                 @if ($sujet->is_valide === 1)
                                 <td><strong>{{ 'Validé' }}</strong></td>

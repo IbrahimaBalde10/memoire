@@ -37,6 +37,7 @@ class FicheSuivieController extends Controller
             'description' =>'required',
             
         ]);
+        
         $ficheSuivie = FicheSuivie::create($request->all());
        
         $ficheSuivie->save();
