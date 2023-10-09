@@ -12,9 +12,11 @@
                 {{session('info')}}
             </div>
             @endif
-             
+            
             <div class="content flex flex-col sm:justify-center items-center">
-                <table class="table table-hover">
+                <table class=" mx-4  table table-hover">
+                 <nav class="aaa px-4 navbar text-align-center text-uppercase text-light 
+                     bg-"    >Sujets à évaluer</nav><br>
                     <thead>
                         <tr>
                             <th>Id</th>

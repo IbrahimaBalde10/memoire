@@ -11,6 +11,8 @@ use App\Models\Sujet;
 use App\Models\Etudiant;
 use App\Models\Professeur;
 use App\Models\Zchoix;
+use App\Models\Memoire;
+use App\Models\Commentaire;
 
 class User extends Authenticatable
 {
@@ -73,6 +75,11 @@ public function choix()
         return $this->hasMany(Sujet::class);
     }
 
+    //  public function memoire()
+    // {
+    //     return $this->hasMany(Memoire::class);
+    // }
+
     public function etudiant()
     {
         return $this->hasOne(Etudiant::class);
@@ -82,6 +89,13 @@ public function choix()
     {
         return $this->hasOne(Professeur::class);
     }
+
+// les commentaires dun utilisateur
+public function commentaires()
+    {
+        return $this->hasMany(Commentaire::class);
+    }
+    
 
 // public function sujetsProposesParEtudiants()
 // {

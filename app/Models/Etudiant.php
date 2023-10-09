@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Model\PropositionSujet;
 use App\Models\User;
 use App\Models\FicheSuivie;
+use App\Models\Memoire;
 
 class Etudiant extends Model
 {
@@ -31,4 +32,9 @@ class Etudiant extends Model
     {
         return $this->hasMany(FicheSuivi::class);
     }
+
+    //  public function memoire()
+    // {
+    //     return $this->hasMany(Memoire::class);
+    // }
 }

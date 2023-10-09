@@ -1,17 +1,14 @@
 <x-app-layout> 
-      <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Liste des choix') }}
-        </h2>
-    </x-slot> <br><br>
+    <br><br><br>
         <div class="flex flex-col sm:justify-center items-center ">
-            <h3>Choix effectués</h3>
-  @if(session()->has('info'))
+            @if(session()->has('info'))
             <div class="alert alert-success" role="alert">
                 {{session('info')}}
             </div>
             @endif
                 <table class="table table-hover">
+                 <nav class="aaa px-4 navbar text-align-center text-uppercase text-light 
+                     bg-"    >Tous les choix validés</nav><br>
                     <thead>
                         <tr class="fw-bold">
                             <th>Id</th>

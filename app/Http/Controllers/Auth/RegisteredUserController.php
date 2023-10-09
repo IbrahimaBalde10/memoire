@@ -15,6 +15,7 @@ use Illuminate\View\View;
 
 use App\Models\Etudiant;
 use App\Models\Professeur;
+use App\Notifications\RegisterNotification;
 
 class RegisteredUserController extends Controller
 {
@@ -47,6 +48,8 @@ class RegisteredUserController extends Controller
             'role' => $request['role'], // Rôle sélectionné
         ]);
 
+      
+
         
 
       
@@ -61,11 +64,17 @@ class RegisteredUserController extends Controller
         ]);
     }
 
+      // notification
+        // $user->notify(new RegisterNotification());
+        
     event(new Registered($user));
 
         Auth::login($user);
+
         
  return redirect(RouteServiceProvider::HOME);
     // return $user;
     }
+
+
 }

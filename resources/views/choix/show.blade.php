@@ -9,37 +9,22 @@
     <div class="card">
         <div class="card-content">
            
-        <div class="content flex flex-col sm:justify-center items-center">
-            <p>Informations finales de votre choix <a  class="btn btn-info"vhref="#">Imprimez</a></p> <br>
-            <div class="card container-fluid ">
-
-      <table class="table table-hover ">
-                    <thead class="">
-                        <tr class="text-center  table-success">
-                            <th>Id</th>
-                            <th>Etudiant</th>
-                            <th>Encadreur</th>
-                            <th>Libelle</th>
-                            <th>Resumé</th>
-                            <th>Provenance</th>
-                        </tr>
-                    </thead>
-                    <tbody class="fw-lighter">
-                            <tr>
-                                <td>{{ $choix->id }}</td>
-                                <td><strong>{{ $choix->etudiant->user->name}}</strong></td>
-                                <td><strong>{{ $choix->professeur->user->name }}</strong></td>
-                                <td><strong>{{ $choix->sujet->libelle }}</strong></td> 
-                                 <td><strong>{{ $choix->sujet->resume }}</strong></td>
-                                <td><strong>{{ $choix->sujet->user->name }}</strong></td> 
-                               
-                            </tr>
-                      
-                    </tbody>
-                </table>
-    </div>
-            </div>
-           
+      
+    
+    <div class="card px-6 mx-5 ">
+        <div class="card-header choisir text-white text-uppercase">
+             <h1 class="card-title ">Choix de l'etudiant</h1>
         </div>
-    </div>
+        <div class="card-body">
+           
+            <p class="card-text">
+            <strong class="font-monospace py-2 pe-5"> Etudiant:</strong> {{ $choix->etudiant->user->name}} <br><br>
+             <strong class="font-monospace pe-5">Encadreur:</strong> {{ $choix->professeur->user->name}} <br><br>
+             <strong class="font-monospace pe-2">Origine du sujet :</strong> {{$choix->sujet->user->name}} <br><br>
+             <strong class="font-monospace pe-5">Libellé du sujet:</strong> {{ $choix->sujet->libelle }} <br><br>
+            <strong class="font-monospace pe-5">  Résumé du sujet: </strong>{{ $choix->sujet->resume }}
+            </p>
+        </div>
+     </div><br>
+     <!--  -->
 </x-app-layout>

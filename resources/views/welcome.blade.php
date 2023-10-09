@@ -17,57 +17,98 @@
         </style>
     </head>
     <body class="antialiased ">
-<div class="card text-center border border-info">      
+<div class="card  border">      
     <!--  -->
   <div class="card text-center">
-  <div class="card-header text-dark bg-light  ">
-   <div class="row">
+  <!-- <div class="card-header text-dark bg-danger  "> -->
+   <div class="rowAA bg-info contain">
     <div class="col-md-7 ">
-       <ul class=" nav nav-tabs card-header-tabs col-md-8">
-      <li class="nav-item bg-primary opacity-75">
+       <ul class=" nav nav-tabs card-header-tabs ">
+      <!-- <li class="nav-item ">
         <a class="nav-link text-light "  aria-current="true" href="#">APPLICATION DE GETION DE PROJETS DE FIN D'ETUDES</a>
+      </li> -->
+      <li class="nav-item ">
+        <a class="nav-link text-light "  aria-current="true" href="#"><strong><em><u>
+            MEMOIREASE
+        </u></em></strong></a>
       </li>
      
     </div>
-     <ul class="nav nav-tabs card-header-tabs col-md-5 ">
-      <li class="nav-item">
+     <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item items-center">
         <!-- <a class="nav-link text-dark" aria-current="true" href="#">Active</a> -->
       </li>
 
           @if (Route::has('login'))
             <!-- <nav class="navbar navbar-expand-lg navbar-info bg-info"> -->
-                   <li class="nav-item bg-primary opacity-75"><a href="#" class="nav-link text-light">Mémoires</a></li>  
+                   <!-- <li class="nav-item bg-primary opacity-75"><a href="#" class="nav-link text-light">Mémoires</a></li>  
+                   <li> -->
+                        <!-- <li class="nav-item bg-info opacity-75">
+                            <a class="nav-link text-light "  aria-current="true" href="#">APPLICATION DE GETION DE PROJETS DE FIN D'ETUDES</a>
+                        </li> -->
+                      <!-- Lien pour lister les memoires -->
+                        <li class="nav-item ">
+                            <a  class="nav-link text-light"
+                            :href="route('memoires.index')" :active="request()->routeIs('memoires.index')">
+                                {{ __('Memoires') }}
+                            </a>
+                   </li>
+                   </li>
                     @auth
-                    <li class="nav-item m-2 bg-primary opacity-75"> <a class="nav-link text-light text-light" href="{{ url('/dashboard') }}">Dashboard</a></li>
+                    <li class="nav-item m-2 "> <a class="nav-link text-light text-light" href="{{ url('/dashboard') }}">Dashboard</a></li>
                     @else
                       
-                       <li class="nav-item bg-primary opacity-75"> <a href="{{ route('login') }}" class="nav-link text-light">Se connecter</a></li>
+                       <li class="nav-item "> <a href="{{ route('login') }}" class="nav-link text-light">Se connecter</a></li>
 
                         @if (Route::has('register'))
-                           <li class="nav-item bg-primary opacity-75"> <a href="{{ route('register') }}" class="nav-link text-light">S'inscrire</a></li>
+                           <li class="nav-item "> <a href="{{ route('register') }}" class="nav-link text-light">S'inscrire</a></li>
                         @endif
                     @endauth
-                       <li class="nav-item bg-primary opacity-75"><a href="#" class="nav-link text-light">A propos</a></li> 
+                       <li class="nav-item "><a href="#" class="nav-link text-light">A propos</a></li> 
            
             @endif
            
             </div>
     </ul>
    </div>
+   <style>
+        .rowAA{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between ;
+            padding: 4px;
+        }
+        /* .vvvv{
+            /* background-color:  #e8e8e1; */
+             /* background-color:  #f6f6fb; */
+             /* color:  rgb(44, 46, 47); */
+             /* font-size: large; */
+        } */
+   </style>
   </div>
-  <div class="row">
-     <div class="col-md-5">
-         <div class="card-body">
+  <div class="rowAA container-fluid text-center py-1 vvvv">
+     <div class="col-md-6">
+         <div class="card-body " >
             <!-- <h1><strong>AGPFE</strong></h1>     -->
-                <a href="#" class="btn btn-outline-primary btn-lg card-link">Professeur</a>
-                <a href="#" class="btn btn-outline-primary btn-lg card-link">Etudiant</a>
+                <!-- <a href="#" class="btn btn-outline-primary btn-lg card-link">Professeur</a> -->
+                <!-- <a href="#" class="btn btn-outline-primary btn-lg card-link">Etudiant</a> -->
+                <a href="#" class="btn btn-primary btn-lg card-link">Professeur<a>
+                <a href="#" class="btn btn-primary btn-lg card-link">Etudiant</a>
+          
             </div>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio officia similique iusto vel qui, voluptatibus tempora recusandae dolorem quos repudiandae corrupti animi porro repellat voluptas sed deleniti dolor? Ducimus culpa rem tempore pariatur eius itaque temporibus illo. Magni aliquid, expedita vel odit atque neque consequuntur perferendis ad deleniti rerum velit nemo aspernatur, earum magnam nisi dicta quos, enim accusamus assumenda facere? Id optio dolore maxime voluptatum pariatur omnis amet, natus quibusdam quia ratione aliquid repellat fugiat earum laborum fugit provident? Dicta odit totam ea quae voluptas explicabo eaque nemo cum esse possimus. Ullam, quos sed natus reiciendis hic laborum eaque. plicabo eaque nemo cum esse possimus. Ullam, quos sed natus reiciendis hic laborum eaque</p>
-                    </div>
+            <br>
+            <h3>MémoirEase</h3>
+                <p class="py-4 px-3"
+                    >
+                   MémoirEase est une plateforme d'aide à la gestion des mémoires et des choix de sujets pour les étudiants et les professeurs.
+                    Elle simplifie le processus de soumission des mémoires, la validation des sujets, et la communication entre les parties prenantes.
+                    <!-- MémoirEase : MémoirEase est une application intuitive conçue pour faciliter la gestion des mémoires pour les étudiants et les professeurs.  -->
+                </p>
+            </div>
                     
-                    <div class="col-md-7">
+                    <div class="col-md-6">
                      
-                     <img class="card-img " style="height: 400px;" src="{{ asset('images/img2.jpg') }}" alt="">
+                     <img class="card-img " style="height: 410px;" src="{{ asset('images/img2.jpg') }}" alt="">
                 <div class="card-img-overlay">
     
         
@@ -79,7 +120,7 @@
     <script src="{{ asset('frontend/bootstrap.min.js') }}"></script>
 
           
-<footer id="footer" class="py-3 bg-primary opacity-75 text-light">
+<footer id="footer" class="py-1 bg-info text-light">
     <div class="footer-main">
         <div class="container">
             <div class="row">
@@ -89,7 +130,7 @@
                         <h4>Liens utiles</h4>
                         <ul>
                            <li><a href="http://www.estm.sn">ESTM</a></li>
-                            <li><a href="http://alumni.estm.sn">ALUMNI</a></li>
+                            <!-- <li><a href="http://alumni.estm.sn">ALUMNI</a></li> -->
                         </ul>
                     </div>
                 </div>
@@ -106,14 +147,14 @@
                                 </a>
                             </li>
 
-                            <li class="smedia-02">
+                            <!-- <li class="smedia-02">
                                 <a href="https://twitter.com/mlgoudiaby" target="_blank">
                                     <span class="media-icon">
                                     <i class="fa fa-twitter"></i>
                                     </span>
                                     <span class="media-name">Twitter</span>
                                 </a>
-                            </li>
+                            </li> -->
 
                         </ul>
                     </div>
@@ -124,9 +165,9 @@
                         <p>Dakar - Avenue Cheikh Anta Diop en face hôpital Fann</p>
                             <p><i class="fa fa-phone-square"></i>Téléphone: +221 33 825 28 89</p>
 
-                            <p><i class="fa fa-envelope"></i>
+                            <!-- <p><i class="fa fa-envelope"></i>
                             Courriel : <a class="mail-link" href="mailto:estm@estm.sn">estm@estm.sn</a>
-                            </p>
+                            </p> -->
 
                     </div>
                 </div>

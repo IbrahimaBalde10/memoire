@@ -1,12 +1,14 @@
     <x-app-layout>
-      <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Creer une fiche de suivie') }}
-        </h2>
-    </x-slot>
-<div class="card bg-primary position-relative" >
-    <form method="POST" action="{{ route('ficheSuivie.store') }}" style="width: 700px;" 
-  class="position-absolute top-50 start-30   ms-5 me-1" fill="#212529">
+     <br><br><br>
+<div class="container-fluid bg-seconda ooo" 
+>
+    <div class="container  ">
+    <nav     style="width: 75em;"
+    class="aa1 navbar px-4 text-uppercase text-light">Ajout d'une fiche de suivie</nav>
+
+    <form method="POST" action="{{ route('ficheSuivie.store') }}" 
+    style="width: 600px; margin-left: 16em; padding: 1em;" 
+    class=" bg-light border border-1 border-light my-3" fill="#212529">
         @csrf
 
         <!-- Titre -->
@@ -57,6 +59,6 @@
     </form>
   
 </div>
-  
+</div>  
    
 </x-app-layout>

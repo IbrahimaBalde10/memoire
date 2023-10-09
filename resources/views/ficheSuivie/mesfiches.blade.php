@@ -5,6 +5,7 @@
         </div>
     @endif
     <br><br><br><br> 
+
     @foreach($ficheSuivies as $ficheSuivie)
     <div class="card">
         <div class="card-header">

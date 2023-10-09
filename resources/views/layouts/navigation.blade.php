@@ -1,8 +1,8 @@
-<!-- <nav x-data="{ open: false }" class="bg-light  dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700"> -->
-<nav x-data="{ open: false }" class="fixed-top navbar navbar-light bg-white navbar-expand moodle-has-zindex   ">
+<nav x-data="{ open: false }" class="bg-info fixed-top  dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
+<!-- <nav x-data="{ open: false }" class="fixed-top navbar navbar-light bg-info navbar-expand moodle-has-zindex   "> -->
 
 <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto px-1 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
@@ -16,55 +16,73 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden  space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                    <x-nav-link class="text-light" :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Acceuil') }}
                     </x-nav-link>
                 </div>
                   <!-- Lien pour Proposer un sujet -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('sujets.create')" :active="request()->routeIs('sujets.create')">
+                <!-- <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link class="text-light" :href="route('sujets.create')" :active="request()->routeIs('sujets.create')">
                         {{ __('Proposer un sujet') }}
                     </x-nav-link>
-                </div>
-                   <!-- Lien pour lister les sujet -->
+                </div> -->
+                   <!-- Lien pour lister les sujets -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('sujets.index')" :active="request()->routeIs('sujets.index')">
+                    <x-nav-link class="text-light" :href="route('sujets.index')" :active="request()->routeIs('sujets.index')">
                         {{ __('Sujets') }}
                     </x-nav-link>
                 </div>
 
-                <!-- choix pour un type d'utilisateur -->
-                  <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('choix.mesChoix')" :active="request()->routeIs('choix.mesChoix')">
-                        {{ __('Mon/Mes choix') }}
+                 <!-- Lien pour lister les memoires -->
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link class="text-light" :href="route('memoires.index')" :active="request()->routeIs('memoires.index')">
+                        {{ __('Memoires') }}
                     </x-nav-link>
                 </div>
 
-                <!-- tous les choix -->
+        
+                 @if(auth()->user()->role === 'professeur')
+                   <!-- tous les choix -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('choix.index')" :active="request()->routeIs('choix.index')">
+                    <x-nav-link class="text-light" :href="route('choix.index')" :active="request()->routeIs('choix.index')">
                         {{ __('Liste choix') }}
                     </x-nav-link>
                 </div>
-                 @if(auth()->user()->role === 'professeur')
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('choix.sujetsP')" :active="request()->routeIs('choix.sujetsP')">
+                    <x-nav-link class="text-light" :href="route('choix.sujetsP')" :active="request()->routeIs('choix.sujetsP')">
                         {{ __('Sujets à valider') }}
                     </x-nav-link>
                 </div>
+                  <!-- <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link class="text-light" :href="route('choix.mesChoix')" :active="request()->routeIs('choix.mesChoix')">
+                        {{ __('Mes choix') }}
+                    </x-nav-link>
+                </div> -->
                  <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('choix.mesEtudiants')" :active="request()->routeIs('choix.mesEtudiants')">
+                    <x-nav-link class="text-light" :href="route('choix.choixValide')" :active="request()->routeIs('choix.choixValide')">
+                        {{ __('Choix à valider') }}
+                    </x-nav-link>
+                </div>
+                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link class="text-light" :href="route('choix.mesEtudiants')" :active="request()->routeIs('choix.mesEtudiants')">
                         {{ __('Mes étudiants') }}
                     </x-nav-link>
                 </div>
+                
                 @endif
                  @if(auth()->user()->role === 'etudiant')
-                   <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <?php $idEtudiant = auth()->user()->etudiant->id; ?>
-                    <x-nav-link :href="route('ficheSuivie.show1', $idEtudiant)" :active="request()->routeIs('ficheSuivie.show1', $idEtudiant)">
-                        {{ __('Mes fiches') }}
+                   <!-- choix pour un type d'utilisateur -->
+                  <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link class="text-light" :href="route('choix.mesChoix')" :active="request()->routeIs('choix.mesChoix')">
+                        {{ __('Mon Projet') }}
                     </x-nav-link>
-                </div>
+                  </div>
+                   <!-- <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <?php $idEtudiant = auth()->user()->etudiant->id; ?>
+                    <x-nav-link class="text-light" :href="route('ficheSuivie.show1', $idEtudiant)" :active="request()->routeIs('ficheSuivie.show1', $idEtudiant)">
+                        {{ __('Suivi du projet') }}
+                    </x-nav-link>
+                </div> -->
                  @endif
             </div>
 
@@ -84,7 +102,7 @@
                     </x-slot>
 
                     <x-slot name="content">
-                        <x-dropdown-link :href="route('profile.edit')">
+                        <x-dropdown-link class="text-light" :href="route('profile.edit')">
                             {{ __('Profile') }}
                         </x-dropdown-link>
 

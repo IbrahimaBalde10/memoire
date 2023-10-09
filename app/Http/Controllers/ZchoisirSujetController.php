@@ -77,12 +77,24 @@ class ZchoisirSujetController extends Controller
       
     }
 
-     // valide un choix
-    public function validerChoix(ZchoisirSujet $choix)
+     // les choix à valider par un prof
+    public function choixValide(ZchoisirSujet $choix)
+    {
+         $idProfesseur = auth()->user()->professeur->id;
+
+        $choixs = ZchoisirSujet::where('professeur_id', $idProfesseur)
+                                ->get()
+                                ->where('statut', false);
+        return view('choix.choixValide', compact('choixs','idProfesseur'));
+
+        // return redirect()->route('choix.choixValide')->with('info', 'Le choix a été validé avec succès !');
+    }
+
+      public function valideChoix(ZchoisirSujet $choix)
     {
         $choix->update(['statut' => true]);
 
-        return redirect()->route('choix.mesChoix')->with('info', 'Le choix a été validé avec succès !');
+        return redirect()->route('choix.choixValide')->with('info', 'Le choix a été validé avec succès !');
     }
 
     // afficher les infos d'un choix
@@ -97,12 +109,10 @@ class ZchoisirSujetController extends Controller
         //  $choixs = ZchoisirSujet::where('statut', true)->oldest('id')->paginate(5);
 
         $idProf= auth()->user()->professeur->id;
-        $choixs = ZchoisirSujet::where('professeur_id', $idProf )->get();
+        $choixs = ZchoisirSujet::where('professeur_id', $idProf )->get()
+         ->where('statut', true);;
         return view('choix.mesEtudiants', compact('choixs'));
         
-
-
-
         // return view('ficheSuivie.mesEtudiants1', compact('idProf'));
 
     }

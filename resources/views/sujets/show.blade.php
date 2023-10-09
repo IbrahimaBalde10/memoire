@@ -1,21 +1,18 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            @lang('Information du sujet')
-        </h2>
-
-       
-    </x-slot>
-    <div class="card">
-    <div class="card-body">
-         <p class="font-semibold text-xl text-gray-800">@lang('Libelle')
-            :{{ $sujet->libelle }}</p>
-            <p class="font-semibold text-xl text-gray-800 pt-2">@lang('resume'):{{ $sujet->resume }}</</p>
-            <p>@lang('Provenance'): {{ $sujet->user->name }}</p>
-             
-            <p class="font-semibold text-xl text-gray-800 pt-2">@lang('Professeur')
-    : {{ $sujet->professeur->user->name}}</p>
-    </div>
-    </div>
+   <br><br><br>
+    <br>
+     <div class="card px-6 mx-5 ">
+        <div class="card-header choisir text-white text-uppercase">
+             <h1 class="card-title ">Information du sujet</h1>
+        </div>
+        <div class="card-body">
+           
+            <p class="card-text">
+             <strong class="font-monospace pe-2">Origine du sujet :</strong>L' {{$sujet->user->role}}  {{$sujet->user->name}} <br><br>
+             <strong class="font-monospace pe-5">Libellé du sujet:</strong> {{ $sujet->libelle }} <br><br>
+            <strong class="font-monospace pe-5">  Résumé du sujet: </strong>{{ $sujet->resume }}
+            </p>
+        </div>
+     </div><br>
     
 </x-app-layout>

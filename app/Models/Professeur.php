@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model\PropositionSujet;
 use App\Models\Sujet;
 use App\Models\User;
 use App\Models\FicheSuivie;
+use App\Models\Memoire;
+
 
 class Professeur extends Model
 {
@@ -38,4 +40,9 @@ class Professeur extends Model
     {
         return $this->hasMany(FicheSuivi::class);
     }
+
+    //  public function memoire()
+    // {
+    //     return $this->hasMany(Memoire::class);
+    // }
 }

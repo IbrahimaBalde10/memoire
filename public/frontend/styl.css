@@ -1,0 +1,50 @@
+.aaa, .aa1{
+    background-color: rgb(58, 58, 136);
+    width: 78em;
+}
+
+.choisir{
+    background-color: rgb(58, 58, 136);
+}
+.vvvv{
+background-color: #f6f6fb;
+    color: rgb(44, 46, 47);
+    font-size: large;
+}
+
+.formSujet{
+    margin-top: auto;
+    /* width: 100em; */
+    background-color: aqua;
+    align-items: center;
+    /* margin-left: 33rem; */
+
+
+    /* padding-left: 33em; */
+    /* padding-right: 33em; */
+    /* margin-left: 12em; */
+}
+.formula{
+ 
+    
+}
+.ooo{
+    padding-bottom: 12em;
+    background-color: rgb(233, 229, 222);
+}
+.fffff{
+    background-color: brown;
+}
+ /* style="width: 78em;  " */
+
+.createFichSuivi{
+   /* padding: 12em; */
+   max-width: 40px;
+   margin-left: 12em;
+   border: 2px dotted red;
+
+}
+
+.ccccc{
+    background-color:rgb(233, 229, 222);
+}

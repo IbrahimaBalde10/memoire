@@ -54,9 +54,10 @@ Route::post('/commentaires', [CommentaireController::class, 'store'])->name('com
 Route::get('/commentaires', [CommentaireController::class, 'index'])->name('commentaires.index')->middleware(['auth', 'verified']);;
 
 // memoires
-Route::get('/memoires', [MemoireController::class, 'index'])->name('memoires.index')->middleware(['auth', 'verified']);
 Route::get('/memoires{choix}/create', [MemoireController::class, 'create'])->name('memoires.create')->middleware(['auth', 'verified']);
 Route::post('/memoires', [MemoireController::class, 'store'])->name('memoires.store')->middleware(['auth', 'verified']);
+Route::get('/memoires', [MemoireController::class, 'index'])->name('memoires.index');
+Route::get('/memoires{memoire}/show', [MemoireController::class, 'show'])->name('memoires.show')->middleware(['auth', 'verified']);
 
 
 // afficher tous les choix
@@ -65,8 +66,11 @@ Route::post('/memoires', [MemoireController::class, 'store'])->name('memoires.st
 // afficher mon/mes choix
 Route::get('mesChoix', [ZchoisirSujetController::class, 'indexMesChoix'])->name('choix.mesChoix')->middleware(['auth', 'verified']);;
 
-// valide un sujet SujetController
-Route::patch('/choix/{choix}/valider', [ZchoisirSujetController::class,'validerChoix'])->name('choix.valider');
+Route::get('choixValide', [ZchoisirSujetController::class, 'choixValide'])->name('choix.choixValide')->middleware(['auth', 'verified']);;
+
+
+// valide un choix 
+Route::patch('/choix/{choix}/valider', [ZchoisirSujetController::class,'valideChoix'])->name('choix.valideChoix');
 
 // affocher les sujets à valider par un professeur
 Route::group(['middleware' => ['auth', 'verified']], function () {
