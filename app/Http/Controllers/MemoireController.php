@@ -42,6 +42,7 @@ class MemoireController extends Controller
 
         // $memoire = Memoire::create($request->all());
         $memoire= new Memoire();
+        
         $pdfFileName = time() . '_' . $request->file('fichiepdf')->getClientOriginalName();
        
         $pdfFile = $request->file('fichiepdf')->storeAs('memores' , $pdfFileName, 'public');

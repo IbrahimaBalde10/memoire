@@ -22,7 +22,7 @@
                  </div>
          </div>
             <!--  -->
-               <div class="row">
+               <!-- <div class="row">
                             <div class=" card col-md-4">
                                 <p class="card-body btn btn-success text-light "  href="{{ route('choix.mesEtudiants') }}">Sujet à validés</p>
                             </div>
@@ -39,7 +39,7 @@
                                 <p class="card-body btn btn-success text-light "  href="{{ route('choix.mesEtudiants') }}">Liste des choix</p>
                             </div>
                         
-                </div>
+                </div> -->
             <!--  -->
       
 <footer id="footer" class="py- bg-info text-light">

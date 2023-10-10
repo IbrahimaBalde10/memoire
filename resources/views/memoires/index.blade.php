@@ -27,10 +27,10 @@
 </div>
 
 
-<div class="row p-6">
+<div class="row m-3">
      @foreach($memoires as $memoire)
 
-    <div class="card col-md-5 mx-1 ">
+    <div class="card col-md-6 ">
         <!-- title -->
         <div class="car-title row">
             <p class="col-md-9 my-4">{{$memoire->created_at->format('d-m-y')}}

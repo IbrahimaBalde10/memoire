@@ -20,7 +20,23 @@
                              />
             <x-input-error :messages="$errors->get('fichiepdf')" class="mt-2" />
         </div>
-       
+       <!--  -->
+
+       <!-- id de l'etudiant -->
+         <div class="mt-4">
+        <input type="hidden" name="etudiant_id" value="{{ $choix->etudiant_id}}">
+        </div>
+
+          <!-- id de l'encadreeur -->
+         <div class="mt-4">
+        <input type="hidden" name="professeur_id" value="{{ $choix->professeur_id}}">
+        </div>
+       <!-- id sujet -->
+        <div class="mt-4">
+        <input type="hidden" name="sujet_id" value="{{ $choix->sujet_id }}">
+        </div>
+
+       <!--  -->
      
         <!-- button -->
         <div class="flex items-center justify-center mt-6">

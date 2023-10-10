@@ -8,14 +8,14 @@
             </div>
             @endif
    
-    <div class="card">
+    <!-- <div class="card"> -->
 
-        <div class="card-content">
+        <!-- <div class="card-content"> -->
            
             <div class="content flex flex-col sm:justify-center items-center">
                 <table class="table table-hover">
-                  <nav class="aaa px-4 navbar text-align-center text-uppercase text-light 
-                     bg-"    >Choix à évaluer</nav><br>
+                  <nav class="aaa px-4 my-2 navbar text-align-center text-uppercase text-light 
+                     bg-"    >Choix à évaluer</nav>
                     <thead>
                         <tr>
                             <th>Id</th>
@@ -23,7 +23,8 @@
                             <th>Professeur</th>
                             <th>Sujet</th>
                             <th>Statut</th>
-                            <th>Actions</th>
+                            <th>Actions1</th>
+                            <th>Actions2</th>
                         </tr>
                     </thead>
                     <tbody class="fw-lighter">

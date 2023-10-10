@@ -64,8 +64,7 @@ class RegisteredUserController extends Controller
         ]);
     }
 
-      // notification
-        // $user->notify(new RegisterNotification());
+    
         
     event(new Registered($user));
 

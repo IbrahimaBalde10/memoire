@@ -7,12 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Sujet;
 use App\Models\Etudiant;
 use App\Models\Professeur;
+// notifications
+use Illuminate\Notifications\Notifiable;
 
 
 class ZchoisirSujet extends Model
 {
-    use HasFactory;
-
+    use HasFactory, Notifiable;
+ 
        protected $fillable = ['etudiant_id','professeur_id','sujet_id','statut'];
 
 //     // gestion des choix

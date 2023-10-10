@@ -11,6 +11,7 @@ use App\Models\Sujet;
 class Memoire extends Model
 {
     use HasFactory;
+    
     protected $fillable = ['etudiant_id','professeur_id','sujet_id','fichiepdf', 'statut'];
 
 
