@@ -94,10 +94,13 @@
 
         </div>
         <!-- button -->
-        <div class="flex items-center justify-center mt-6">
-            <x-primary-button class="ml-4">
+        <div class="flex items-center justify-center mt-6 row ">
+            <x-primary-button class=" col-md-2 ml-4 btn btn-info">
                 {{ __('Proposer') }}
             </x-primary-button>
+             <!-- <p class="btn btn-info mx-2 col-md-2">Proposer</p>
+            <p class="btn btn-danger col-md-2">Annuler</p> -->
+            
         </div>
     </form>
 </div>

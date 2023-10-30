@@ -8,7 +8,7 @@
         <div class="card-body">
            
             <p class="card-text">
-             <strong class="font-monospace pe-2">Origine du sujet :</strong>L' {{$sujet->user->role}}  {{$sujet->user->name}} <br><br>
+             <strong class="font-monospace pe-2">Origine du sujet :</strong>  {{$sujet->user->name}} <br><br>
              <strong class="font-monospace pe-5">Libellé du sujet:</strong> {{ $sujet->libelle }} <br><br>
             <strong class="font-monospace pe-5">  Résumé du sujet: </strong>{{ $sujet->resume }}
             </p>

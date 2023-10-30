@@ -17,7 +17,7 @@ class SujetController extends Controller
     public function index($name = null)
 {
     $query = $name ? Filiere::whereName($name)->firstOrFail()->sujets() : Sujet::query();
-    $sujets = $query->where('is_valide', true)->oldest('libelle')->paginate(5);
+    $sujets = $query->where('is_valide', true)->oldest('libelle')->paginate(3);
 //    $professeurs = User::where('role', 'professeur')->get();
     // $sujets = Sujet::all();
     $filieres = Filiere::all();

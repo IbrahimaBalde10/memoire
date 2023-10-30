@@ -7,7 +7,7 @@
     <header class=" card-header row">
         <div class="select col-md-8">
             <select onchange="window.location.href = this.value">
-                <option value="{{ route('sujets.index') }}" @unless($name) selected @endunless>Toutes filieres confondues</option>
+                <option value="{{ route('sujets.index') }}" @unless($name) selected @endunless>Rechercher un sujet par filière</option>
                 @foreach($filieres as $filiere)
                     <option value="{{ route('sujets.filiere', $filiere->name) }}" {{ $name == $filiere->name ? 'selected' : '' }}>{{ $filiere->name }}</option>
                 @endforeach
@@ -35,7 +35,7 @@
         <div class="container-fluid flex flex-col sm:justify-center items-center ">
               <!-- <caption>Liste des sujets</caption> -->
                 <table class="container-fluid table table-hover"><br>
-                     <nav class="aaa px-4 navbar text-align-center text-uppercase text-light 
+                     <nav class="fs-6 fw-medium aaa px-4 mx-4 navbar text-sm-end text-uppercase text-light 
                      bg-"    >Liste des sujets</nav>
                      <!-- width: 78em;  >Liste des sujets</nav> -->
                     
@@ -89,11 +89,13 @@
                          {{ __('+ Proposer un sujet') }}
                        </button>
                     </x-nav-link>
+                    
                 </div>
+                <p class="d-flex-end ">{{$sujets->links()}}</p>
             </div>
             
              <div class=""> 
-                <p class="d-flex-end ">{{$sujets->links()}}</p>
+                <!-- <p class="d-flex-end ">{{$sujets->links()}}</p> -->
             </div> 
               
 

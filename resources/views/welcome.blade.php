@@ -23,12 +23,12 @@
   <!-- <div class="card-header text-dark bg-danger  "> -->
    <div class="rowAA bg-info contain">
     <div class="col-md-7 ">
-       <ul class=" nav nav-tabs card-header-tabs ">
+       <ul class=" nav nav-tabs card-header-tabs px-4">
       <!-- <li class="nav-item ">
         <a class="nav-link text-light "  aria-current="true" href="#">APPLICATION DE GETION DE PROJETS DE FIN D'ETUDES</a>
       </li> -->
       <li class="nav-item ">
-        <a class="nav-link text-light "  aria-current="true" href="#"><strong><em><u>
+        <a class="nav-link text-light fs-4 fw-medium"  aria-current="true" href="#"><strong><em><u>
             MEMOIREASE
         </u></em></strong></a>
       </li>
@@ -58,10 +58,10 @@
                     <li class="nav-item m-2 "> <a class="nav-link text-light text-light" href="{{ url('/dashboard') }}">Dashboard</a></li>
                     @else
                       
-                       <li class="nav-item "> <a href="{{ route('login') }}" class="nav-link text-light">Se connecter</a></li>
+                       <!-- <li class="nav-item "> <a href="{{ route('login') }}" class="nav-link text-light">Se connecter</a></li> -->
 
                         @if (Route::has('register'))
-                           <li class="nav-item "> <a href="{{ route('register') }}" class="nav-link text-light">S'inscrire</a></li>
+                           <!-- <li class="nav-item "> <a href="{{ route('register') }}" class="nav-link text-light">S'inscrire</a></li> -->
                         @endif
                     @endauth
                        <li class="nav-item "><a href="#" class="nav-link text-light">A propos</a></li> 
@@ -87,32 +87,66 @@
    </style>
   </div>
   <div class="rowAA container-fluid text-center py-1 vvvv">
-     <div class="col-md-6">
+     <div class="col-md-6 bg-white">
          <div class="card-body " >
             <!-- <h1><strong>AGPFE</strong></h1>     -->
                 <!-- <a href="#" class="btn btn-outline-primary btn-lg card-link">Professeur</a> -->
                 <!-- <a href="#" class="btn btn-outline-primary btn-lg card-link">Etudiant</a> -->
-                <a href="#" class="btn btn-primary btn-lg card-link">Professeur<a>
-                <a href="#" class="btn btn-primary btn-lg card-link">Etudiant</a>
+                <!-- <a href="#" class="btn btn-primary btn-lg card-link">Professeur<a>
+                <a href="#" class="btn btn-primary btn-lg card-link">Etudiant</a> -->
           
             </div>
             <br>
-            <h3>MémoirEase</h3>
-                <p class="py-4 px-3"
+            <h3 class="fs-2 fw-medium">ENTAMER VOTRE PROJET AVEC MémoirEase</h3>
+            
+                <p class="py-4 px-3 fs-6 fw-normal
+                text-center"
                     >
-                   MémoirEase est une plateforme d'aide à la gestion des mémoires et des choix de sujets pour les étudiants et les professeurs.
-                    Elle simplifie le processus de soumission des mémoires, la validation des sujets, et la communication entre les parties prenantes.
+                    MémoirEase est une plateforme d'aide à la gestion des projets de fin d'études pour les étudiants et les professeurs conçue par des développeurs. <br>
+                    Elle simplifie le processus de proposition et de validation des sujets, la soumission et la publication des mémoires et la communication entre les parties prenantes.
                     <!-- MémoirEase : MémoirEase est une application intuitive conçue pour faciliter la gestion des mémoires pour les étudiants et les professeurs.  -->
                 </p>
-            </div>
+                <div class="mx- border border-1 px-3 row bg-light p-2 bg-opacity-">
+                    <div class="col-md-6 mx-">
+                        <div class="card">
+                           <p class="card-header">
+                                Professeur
+                           </p>
+                           <p class="card-body">
+                            <p class="card-text">Connectez-vous</p>
+                            <a href="#" class="btn btn-primary">Par ICI</a>
+                           </p>
+                        </div>
+                    </div>
+                    <!--  -->
+                    <div class="col-md-6 mx-">
+                        <div class="card">
+                           <p class="card-header">
+                                Etudiant
+                           </p>
+                           <p class="card-body">
+                            <p class="card-text">Connectez-vous</p>
+                            <a href="#" class="btn btn-primary">Par ICI</a>
+                           </p>
+                        </div>
+                    </div>
+                </div>
+               
                     
-                    <div class="col-md-6">
+                    
+                 <!-- <a href="#" class=" card btn btn-primary btn-lg card-link">Professeur<a>
+                <a href="#" class="card btn btn-primary btn-lg card-link">Etudiant</a> -->
+            
+                </div>
+                    
+                    <div class="col-md-6 border  border-dark">
                      
                      <img class="card-img " style="height: 410px;" src="{{ asset('images/img2.jpg') }}" alt="">
                 <div class="card-img-overlay">
     
         
                  </div>
+                 
                 </div>
   
 </div>
@@ -120,7 +154,7 @@
     <script src="{{ asset('frontend/bootstrap.min.js') }}"></script>
 
           
-<footer id="footer" class="py-1 bg-info text-light">
+<footer id="footer" class="bg-info text-light py-1">
     <div class="footer-main">
         <div class="container">
             <div class="row">

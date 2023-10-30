@@ -1,7 +1,7 @@
 <x-guest-layout >
     <!-- Session Status -->
     <x-auth-session-status class="mb-4 mrx4" :status="session('status')" />
-    <fieldset class="text-center">Se connecter</fieldset>
+    <!-- <fieldset class="text-center">Se connecter</fieldset> -->
     <form method="POST"  class="p-4" action="{{ route('login') }}">
         @csrf
 

@@ -2,8 +2,8 @@
 <!-- <nav x-data="{ open: false }" class="fixed-top navbar navbar-light bg-info navbar-expand moodle-has-zindex   "> -->
 
 <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-1 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
+    <div class="max-w-7xl mx-auto px-1 sm:px-6 lg:px-8 ">
+        <div class="flex justify-between h-16 mx-4">
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
@@ -43,16 +43,16 @@
         
                  @if(auth()->user()->role === 'professeur')
                    <!-- tous les choix -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <!-- <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link class="text-light" :href="route('choix.index')" :active="request()->routeIs('choix.index')">
                         {{ __('Liste choix') }}
                     </x-nav-link>
-                </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                </div> -->
+                <!-- <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link class="text-light" :href="route('choix.sujetsP')" :active="request()->routeIs('choix.sujetsP')">
                         {{ __('Sujets à valider') }}
                     </x-nav-link>
-                </div>
+                </div> -->
                   <!-- <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link class="text-light" :href="route('choix.mesChoix')" :active="request()->routeIs('choix.mesChoix')">
                         {{ __('Mes choix') }}
@@ -60,7 +60,7 @@
                 </div> -->
                  <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link class="text-light" :href="route('choix.choixValide')" :active="request()->routeIs('choix.choixValide')">
-                        {{ __('Choix à valider') }}
+                        {{ __('Choix & Sujets à valider') }}
                     </x-nav-link>
                 </div>
                  <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">

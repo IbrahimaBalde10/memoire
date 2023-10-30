@@ -7,23 +7,28 @@
     @endif
     <br><br>
 <!-- </x-slot> -->
-   <div class="ccccc">
+   <div class="row ">
+        <!-- <div class="mx-5 col-md-5" style="width: 700px;" > -->
+     <div class="col-md-9  border border-4 border-light"  >
 
-   
-    <div class="card">
+    <p class=" aa1 navbar px-6 text-uppercase text-light">FICHE DE SUIVIE de l'étudiant Fatou GASSAMA</p><br>
+    <div class="card ">
         <div class="card-header">
-             <h1 class="card-title"><strong class="text-primary"> {{ $ficheSuivie->titre }}</strong></h1>
+             <h1 class="card-title"><strong>Titre: </strong><strong class="text-primary"> {{ $ficheSuivie->titre }}</strong></h1>
         </div>
         <div class="card-body">
            
-            <p class="card-text">{{ $ficheSuivie->description }}.</p>
-            <p class="card-text align-self-center justify-content-center ">{{ $ficheSuivie->created_at->format('d-m-y')}} </p>
+            <p class="card-text px-">{{ $ficheSuivie->description }} <a href="" class="btn btn-info ">Par Ici.</a></p>
+       <div class="row">
+                <p class="col-md-9 card-text align-self-center justify-content-center ">{{ $ficheSuivie->created_at->format('d-m-y')}} </p>
+                <p class="col-md-2 btn btn-primary">Editer la fiche</p>
+       </div>
         </div>
      </div> 
     <br>
 <div>
     
-       <!-- <form method="POST" action="{{ route('commentaires.store') }}" style="width: 700px;" 
+<!-- <form method="POST" action="{{ route('commentaires.store') }}" style="width: 700px;" 
   class="position-absolute top-50 start-30   ms-5 me-1" fill="#212529"> -->
    <form method="POST" action="{{ route('commentaires.store') }}" 
   class="" >
@@ -48,9 +53,10 @@
        
           <!-- button -->
         <div class="flex items-center justify-center my-2 mt-4">
-            <x-primary-button class="ml-4">
-                {{ __('Commenter') }}
-            </x-primary-button>
+            <!-- <x-primary-button class="ml-4">
+                {{ __('Ajout un commentaire') }}
+            </x-primary-button> -->
+            <p class="btn btn-primary">Ajout d'un commentaire</p>
         </div>
     </form>
     
@@ -72,4 +78,10 @@
      
      @endforeach
      </div>
+     <!-- <div class="col-md-3">
+    <p>Fiche de suivie de  <strong>Fatou GASSAMA</strong></p>
+    <p>Etudiant {{ $commentaire->user->name}}</p>
+   </div> -->
+   </div>
+   
 </x-app-layout>

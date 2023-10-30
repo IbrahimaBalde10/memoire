@@ -15,25 +15,25 @@
             <div class="content flex flex-col sm:justify-center items-center">
                 <table class="table table-hover">
                   <nav class="aaa px-4 my-2 navbar text-align-center text-uppercase text-light 
-                     bg-"    >Choix à évaluer</nav>
+                     bg-"    >Choix à valider</nav>
                     <thead>
                         <tr>
-                            <th>Id</th>
+                            <!-- <th>Id</th> -->
                             <th>Etudiant</th>
                             <th>Professeur</th>
                             <th>Sujet</th>
                             <th>Statut</th>
-                            <th>Actions1</th>
-                            <th>Actions2</th>
+                            <th>Action1</th>
+                            <th>Action2</th>
                         </tr>
                     </thead>
                     <tbody class="fw-lighter">
                         @foreach($choixs as $choix)
                             <tr>
-                                <td>{{ $choix->id }}</td>
+                                <!-- <td>{{ $choix->id }}</td> -->
                                 <td><strong>{{ $choix->etudiant->user->name}}</strong></td>
                                 <td><strong>{{ $choix->professeur->user->name }}</strong></td>
-                                <td><strong>{{ $choix->sujet_id }}</strong></td> 
+                                <td><strong></strong><strong class="btn btn-info">Consulter</strong></td> 
                                 @if ($choix->statut === 1)
                                 <td><strong>{{ 'Validé' }}</strong></td>
                                 @else
@@ -45,7 +45,7 @@
                                 <td><form action="{{ route('choix.valideChoix', $choix) }}" method="POST">
                                     @csrf
                                     @method('PATCH')
-                                    <button type="submit" class="btn btn-outline-success bg-success text-light">Valider</button>
+                                    <button type="submit" class="btn btn-outline-success bg-success text-light">Accepter</button>
                                 </form></td>
                                 <td><a class="btn btn-danger" href="{{ route('choix.show', $choix->id) }}">Rejeter</a></td>
                             

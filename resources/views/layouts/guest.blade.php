@@ -36,13 +36,13 @@
                 <!-- Navigation Links -->
                 <div class="hidden  space-x-9 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                       <strong class="text-light">{{ __('MémoirEase') }}</strong>
+                       <strong class="text-light fs-4 fw-medium">{{ __('MémoirEase') }}</strong>
                     </x-nav-link>
                 </div>
                 <div class="hidden  space-x-9 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                    <!-- <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                        <strong class="text-light">{{ __('Se conncter') }}</strong>
-                    </x-nav-link>
+                    </x-nav-link> -->
                 </div>
         </nav>
            <!-- fin -->
