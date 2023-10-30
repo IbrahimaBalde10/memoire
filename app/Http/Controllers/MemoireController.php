@@ -18,7 +18,12 @@ class MemoireController extends Controller
       public function index()
     {   
          $memoires = Memoire::where('statut', false)->get() ?? 'Aucun mémoire';
-
+        // 
+        // $sujet = App\Sujet::find(1); // Remplacez 1 par l'ID de votre sujet
+        // $summary = $sujet->resume;
+        // $words = str_word_count($summary, 1);
+        // $first10Words = implode(' ', array_slice($words, 0, 10));
+        // 
          return view('memoires.index', compact('memoires'));
     }
 

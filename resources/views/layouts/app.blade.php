@@ -17,6 +17,9 @@
         <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        <!--  -->
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
     </head>
     <body class="font-sans antialiased ">
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900 ">
